@@ -1,0 +1,3 @@
+include ':myLibRv'
+include ':app'
+rootProject.name = "RecylerMultipleView"
