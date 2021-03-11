@@ -7,6 +7,10 @@ Its just my base code for multipleview type of Recyclerview. Sometime i just use
 If you want to use this, just be patient, cause i just put much bug on this stuff.
 So, happy debugging.
 
+## Preview ?
+
+<p align='center'> <img src="https://github.com/gandhi-wibowo/RecylerMultipleView/blob/master/img/ExampleOne.png"/></p>
+
 ## Install ?
 
 Add it in your root _build.gradle_ at the ed of repositories :
