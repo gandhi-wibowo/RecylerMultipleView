@@ -32,7 +32,9 @@ class MainActivity : AppCompatActivity() {
             listOf(
                 ExampleOneFullModel("ONe Content Center"),
                 ExampleOneHalfModel("One Content Left"),
-                ExampleOneDualModel("Dual Content Left", "Dua Content RIght")
+                ExampleOneFullModel("ONe Content Center"),
+                ExampleOneDualModel("Dual Content Left", "Dua Content RIght"),
+                ExampleOneHalfModel("One Content Left"),
             )
         )
     }
