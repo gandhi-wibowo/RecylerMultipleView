@@ -4,8 +4,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dizcoding.mylibrv.BaseListAdapter
-import com.dizcoding.recylermultipleview.adapter.exampleone.ExampleOneFactoryImpl
-import com.dizcoding.recylermultipleview.adapter.exampleone.ExampleOneModel
+import com.dizcoding.recylermultipleview.adapter.exampleone.ExampleOneTypeFactoryImpl
+import com.dizcoding.recylermultipleview.adapter.exampleone.dual.ExampleOneDualModel
+import com.dizcoding.recylermultipleview.adapter.exampleone.full.ExampleOneFullModel
+import com.dizcoding.recylermultipleview.adapter.exampleone.half.ExampleOneHalfModel
 import com.dizcoding.recylermultipleview.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        adapter = BaseListAdapter(ExampleOneFactoryImpl())
+        adapter = BaseListAdapter(ExampleOneTypeFactoryImpl())
 
         binding.mainRv.layoutManager = LinearLayoutManager(this)
         binding.mainRv.adapter = adapter
@@ -25,13 +27,13 @@ class MainActivity : AppCompatActivity() {
         initExampleOneData()
     }
 
-    private fun initExampleOneData(){
-        adapter.addItems(listOf(
-            ExampleOneModel(listOf("1"),0),
-            ExampleOneModel(listOf("2","3"),1),
-            ExampleOneModel(listOf("4","5"),1),
-            ExampleOneModel(listOf("6"),2),
-            ExampleOneModel(listOf("7"),0)
-        ))
+    private fun initExampleOneData() {
+        adapter.addItems(
+            listOf(
+                ExampleOneFullModel("ONe Content Center"),
+                ExampleOneHalfModel("One Content Left"),
+                ExampleOneDualModel("Dual Content Left", "Dua Content RIght")
+            )
+        )
     }
 }

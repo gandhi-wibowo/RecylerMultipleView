@@ -118,7 +118,7 @@ class BaseListAdapter(
     private var nextPage = false
     private var currentPage = 0
 
-    fun setPaginationParam(nextPage : Boolean, currentPage : Int){
+    fun setPaginationParam(nextPage: Boolean, currentPage: Int) {
         this.nextPage = nextPage
         this.currentPage = currentPage
     }
