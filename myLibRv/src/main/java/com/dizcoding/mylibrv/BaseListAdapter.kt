@@ -115,6 +115,12 @@ class BaseListAdapter(
         notifyDataSetChanged()
     }
 
+    // purpose for sorting items
+    fun sort(ascending: Boolean = true) {
+        if (ascending) this.items.sortBy { it.itemIndex }
+        else this.items.sortByDescending { it.itemIndex }
+    }
+
     private var nextPage = false
     private var currentPage = 0
 
