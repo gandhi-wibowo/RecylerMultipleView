@@ -4,6 +4,7 @@ package com.dizcoding.mylibrv
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
@@ -36,6 +37,13 @@ class BaseListAdapter(
 
     override fun getItemViewType(position: Int): Int {
         return items[position].type(adapterTypeFactoryBase)
+    }
+
+    fun setData(items: ArrayList<BaseItemModel>,diffCallback : DiffUtil.Callback){
+        val diffResult = DiffUtil.calculateDiff(diffCallback)
+        this.items.clear()
+        this.items.addAll(items)
+        diffResult.dispatchUpdatesTo(this)
     }
 
     fun getSelected(): ArrayList<BaseItemModel> {
